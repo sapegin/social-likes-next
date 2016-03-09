@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.development');
 
 var serverPort = 8506;
-var serverHost = 'localhost';
+var serverHost = '0.0.0.0';
 
 var app = express();
 var compiler = webpack(webpackConfig);
