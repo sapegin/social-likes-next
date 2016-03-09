@@ -3,22 +3,20 @@
 // Design: Genn Osipenko, http://genn.org/
 
 @import './include/base'
-
-text_color = #fff;
-margin = .45em;
+@import './include/colors'
 
 .social-likes {
 	min-height:36px;
-	margin:(-(margin));
+	margin:-.45em;
 	line-height:1.45;
 	
 	&__widget {
 		tweak-inverted-text();
-		margin:margin;
+		margin:.45em;
 		line-height:inherit;
 		border:0;
 		text-align:left;
-		color:text_color;
+		color:#fff;
 	}
 
 	&__button {
@@ -39,31 +37,31 @@ margin = .45em;
 	
 	// Facebook
 	&__widget_facebook {
-		background:#3d5b95;
+		background:facebook-color;
 	}
 
 	// Twitter
 	&__widget_twitter {
-		background:#24aadd;
+		background:twitter-color;
 	}
 
 	// Google+
 	&__widget_plusone {
-		background:#d23e30;
+		background:plusone-color;
 	}
 
 	// Vkontakte
 	&__widget_vkontakte {
-		background:#587e9f;
+		background:vkontakte-color;
 	}
 
 	// Odnoklassniki
 	&__widget_odnoklassniki {
-		background:#f59310;
+		background:odnoklassniki-color;
 	}
 
 	// Pinterest
 	&__widget_pinterest {
-		background:#cb132d;
+		background:pintereset-color;
 	}
 }
