@@ -33,49 +33,37 @@ margin = .45em;
 	}
 
 	// Vertical mode
-	&_vertical {
-		.social-likes__widget {
-			min-width:13em;
-		}
+	&_vertical &__widget {
+		min-width:13em;
 	}
-}
-
-// Facebook
-.social-likes__widget_facebook {
-	background:#3d5b95;
-}
-.social-likes__icon_facebook {
-	.social-likes_notext & {
-		margin-left:.15em;
+	
+	// Facebook
+	&__widget_facebook {
+		background:#3d5b95;
 	}
-}
 
-// Twitter
-.social-likes__widget_twitter {
-	background:#24aadd;
-}
-
-// Google+
-.social-likes__widget_plusone {
-	background:#d23e30;
-}
-.social-likes__icon_plusone {
-	.social-likes_notext & {
-		margin-left:0;
+	// Twitter
+	&__widget_twitter {
+		background:#24aadd;
 	}
-}
 
-// Vkontakte
-.social-likes__widget_vkontakte {
-	background:#587e9f;
-}
+	// Google+
+	&__widget_plusone {
+		background:#d23e30;
+	}
 
-// Odnoklassniki
-.social-likes__widget_odnoklassniki {
-	background:#f59310;
-}
+	// Vkontakte
+	&__widget_vkontakte {
+		background:#587e9f;
+	}
 
-// Pinterest
-.social-likes__widget_pinterest {
-	background:#cb132d;
+	// Odnoklassniki
+	&__widget_odnoklassniki {
+		background:#f59310;
+	}
+
+	// Pinterest
+	&__widget_pinterest {
+		background:#cb132d;
+	}
 }
