@@ -28,7 +28,7 @@ function autoInit(wait = false) {
 		[...elements].forEach(init);
 	}
 	else if (wait) {
-		// No elements foud. Wait for DOM content loaded to try again in case the script was included in the <head>.
+		// No elements found. Wait for DOM content loaded to try again in case the script was included in the <head>.
 		document.addEventListener('DOMContentLoaded', autoInit);
 	}
 }
