@@ -3,7 +3,7 @@
 
 Beautiful share buttons for popular social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
 
-![](http://wow.sapegin.me/image/1f1U2S130d3R/social-likes.png)
+![](http://wow.sapegin.me/101O2X050C32/social-likes-next.png)
 
 ## Features
 
