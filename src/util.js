@@ -138,7 +138,7 @@ export function makeUrl(url, context) {
  * @return {String}
  */
 export function template(tmpl, context, filter) {
-	return tmpl.replace(/\{([^\}]+)\}/g, function(m, key) {
+	return tmpl.replace(/\{([^}]+)}/g, function(m, key) {
 		let value = filter ? filter(context[key]) : context[key];
 		// If key doesn't exists in the context we should keep template tag as is
 		return key in context ? value : m;
