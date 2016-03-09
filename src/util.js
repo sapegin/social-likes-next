@@ -177,7 +177,7 @@ export function className(elem, mod) {
  * @return {String}
  */
 export function readCssContent(node) {
-	return getComputedStyle(node).content.replace(/"/g, '');
+	return getComputedStyle(node).content.replace(/["']/g, '');
 }
 
 /**
