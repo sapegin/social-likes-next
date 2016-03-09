@@ -2,6 +2,24 @@
   "name": "social-likes-next",
   "version": "0.1.0",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "dist",
+    "contrib"
+  ],
+  "homepage": "https://github.com/sapegin/social-likes-next",
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "http://sapegin.me/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sapegin/social-likes-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sapegin/social-likes-next/issues"
+  },
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "~6.1.0",
     "babel-cli": "~6.1.1",
