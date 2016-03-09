@@ -1,35 +1,36 @@
 // Social Likes by Artem Sapegin. http://sapegin.github.io/social-likes/
-// Flat skin
+// Light skin
 // Design: Genn Osipenko, http://genn.org/
 
 @import './include/base'
 
 text_color = #fff;
-margin = .45em;
 
 .social-likes {
 	min-height:36px;
-	margin:(-(margin));
+	margin:-.4em -.6em;
 	line-height:1.45;
 	
 	&__widget {
-		tweak-inverted-text();
-		margin:margin;
+		min-width:0;
+		margin:.45em;
 		line-height:inherit;
 		border:0;
 		text-align:left;
-		color:text_color;
 	}
 
 	&__button {
-		padding:.16em .7em .2em 1.8em;
+		min-width:0;
+		padding-left:1.4em;
 		vertical-align:middle;
 		font-size:.95em;
+		font-weight:normal;
+		text-decoration:underline;
 	}
 
 	&__icon {
-		top:.3em;
-		left:.4em;
+		top:.2em;
+		left:.15em;
 	}
 
 	// Vertical mode
@@ -42,7 +43,7 @@ margin = .45em;
 
 // Facebook
 .social-likes__widget_facebook {
-	background:#3d5b95;
+	color:#3d5b95;
 }
 .social-likes__icon_facebook {
 	.social-likes_notext & {
@@ -52,12 +53,12 @@ margin = .45em;
 
 // Twitter
 .social-likes__widget_twitter {
-	background:#24aadd;
+	color:#24aadd;
 }
 
 // Google+
 .social-likes__widget_plusone {
-	background:#d23e30;
+	color:#d23e30;
 }
 .social-likes__icon_plusone {
 	.social-likes_notext & {
@@ -67,15 +68,16 @@ margin = .45em;
 
 // Vkontakte
 .social-likes__widget_vkontakte {
-	background:#587e9f;
+	color:#587e9f;
 }
 
 // Odnoklassniki
 .social-likes__widget_odnoklassniki {
-	background:#f59310;
+	color:#f59310;
 }
 
 // Pinterest
 .social-likes__widget_pinterest {
-	background:#cb132d;
+	color:#cb132d;
 }
+

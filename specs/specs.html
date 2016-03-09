@@ -5,7 +5,8 @@
 	<title>Social Likes</title>
 	<link id="styles_flat" href="/social-likes_flat.css" rel="stylesheet">
 	<link id="styles_birman" href="/social-likes_birman.css" rel="stylesheet" disabled>
- 
+	<link id="styles_light" href="/social-likes_light.css" rel="stylesheet" disabled>
+
 <script>
 function $(selector) {
 	return document.querySelector(selector);
@@ -15,6 +16,7 @@ function $(selector) {
 	function updateSkin() {
 		$('#styles_flat').disabled = true;
 		$('#styles_birman').disabled = true;
+		$('#styles_light').disabled = true;
 		$('#styles_' + location.hash.slice(1)).disabled = false;
 	}
 
@@ -76,6 +78,7 @@ section {
 		Skin:
 		<a id="flat" href="#flat">Flat</a>,
 		<a id="birman" href="#birman">Birman</a>,
+		<a id="light" href="#light">Light</a>,
 		<a id="grid" href="#">Toggle grid</a>
 	</div>
 
