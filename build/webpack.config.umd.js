@@ -1,17 +1,18 @@
 var path = require('path');
 var merge = require('webpack-merge');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BannerPlugin = require('webpack/lib/BannerPlugin');
 var baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
+	output: {
+		path: path.resolve('dist'),
+		filename: 'social-likes.js'
+	},
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development')
+			'process.env.NODE_ENV': JSON.stringify('production')
 		}),
-		new HtmlWebpackPlugin({
-			template: path.resolve('specs/specs.html'),
-			inject: true
-		})
+		new BannerPlugin(baseConfig._banner)
 	]
 });

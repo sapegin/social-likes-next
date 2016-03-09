@@ -18,13 +18,14 @@
     "rimraf": "~2.4.3",
     "stylus": "~0.52.4",
     "webpack": "~1.12.2",
-    "webpack-dev-middleware": "~1.2.0"
+    "webpack-dev-middleware": "~1.2.0",
+    "webpack-merge": "~0.8.3"
   },
   "scripts": {
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min && npm run skins && npm run skins:min",
     "build:lib": "babel src --out-dir lib",
-    "#build:umd": "webpack --output-file dist/social-likes.js --config build/webpack.config.development.js",
-    "#build:umd:min": "webpack --output-file dist/social-likes.min.js --config build/webpack.config.production.js",
+    "build:umd": "webpack --config build/webpack.config.umd.js",
+    "build:umd:min": "webpack --config build/webpack.config.umd-min.js",
     "clean": "rimraf lib dist",
     "start": "node build/webpack-dev-server.js",
     "lint": "eslint src",
