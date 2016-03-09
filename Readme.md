@@ -1,14 +1,9 @@
 
-# Social Likes
+# Social Likes Next
 
-[![Bower version](https://badge.fury.io/bo/social-likes.svg)](http://badge.fury.io/bo/social-likes)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+Beautiful share buttons for popular social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
 
-Beautiful share buttons with counters for popular social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte, etc. Uses jQuery.
-
-[![](http://wow.sapegin.me/image/1f1U2S130d3R/social-likes.png)](http://sapegin.github.io/social-likes/)
-
-[See demo](http://sapegin.github.io/social-likes/)
+![](http://wow.sapegin.me/image/1f1U2S130d3R/social-likes.png)
 
 ## Features
 
@@ -16,13 +11,33 @@ Beautiful share buttons with counters for popular social networks: Facebook, Twi
 - Beautiful and all in one style (with three different skins).
 - Won’t explode your page’s layout.
 
+This is a modern version of the [Social Likes for jQuery](https://github.com/sapegin/social-likes). Main distinctions:
+
+- No dependencies.
+- No counters.
+- No single button mode.
+- SVG icons.
+- Supports IE11+.
 
 ## Installation and configuration
 
-Use [interactive builder](http://sapegin.github.io/social-likes/) to generate the code.
+```bash
+npm install --save social-likes-next
+```
 
-Or install via [Bower](http://bower.io/): `$ bower install social-likes`.
+Add to your HTML:
 
+```html
+<link rel="stylesheet" href="node_modules/social-likes-next/dist/social-likes_flat.css">
+...
+<script src="node_modules/social-likes-next/dist/social-likes.min.js"></script>
+...
+<div class="social-likes">
+	<div data-service="facebook" title="Share link on Facebook">Facebook</div>
+	<div data-service="twitter" title="Share link on Twitter">Twitter</div>
+	<div data-service="plusone" title="Share link on Google+">Google+</div>
+</div>
+```
 
 ## Advanced configuration
 
@@ -50,29 +65,6 @@ All buttons in a column.
 </div>
 ```
 
-#### Single button
-
-One button with a counter (summ of all the networks). Opens popup with like buttons in vertical layout. Use `data-single-title` attribute to change button title.
-
-```html
-<div class="social-likes social-likes_single" data-single-title="Share me!">
-	<div class="facebook" title="Share link on Facebook">Facebook</div>
-	...
-</div>
-```
-
-#### Icons only
-
-If you want to remove button titles add `social-likes_notext` class to make it looks better.
-
-```html
-<div class="social-likes social-likes_notext">
-	<div class="facebook" title="Share link on Facebook"></div>
-	...
-</div>
-```
-
-
 ### Options
 
 Options define via HTML data attributes or JavaScript parameters object.
@@ -85,22 +77,6 @@ URL of shareable page. Current page by default.
 
 Title for Twitter, Vkontakte and LiveJournal. Current page’s title by default.
 
-`html`
-
-HTML code for LiveJournal button. By default <A> tag with link to current page.
-
-`counters`
-
-Disables “likes” counters when “no”. Default: “yes”.
-
-`zeroes`
-
-Show counters even when number is `0`. Default: “no”.
-
-`single-title`
-
-Share button title for “single button” mode. Default: “Share”.
-
 Examples:
 
 ```html
@@ -109,18 +85,10 @@ Examples:
 </div>
 ```
 
-```html
-<div class="social-likes social-likes_single" data-single-title="This is Sharing!">
-	…
-</div>
-```
-
 ```js
 $('.social-likes').socialLikes({
 	url: 'https://github.com/sapegin/social-likes/',
-	title: 'Beautiful “like” buttons with counters for popular social networks',
-	counters: true,
-	singleTitle: 'Share it!'
+	title: 'Beautiful “like” buttons with counters for popular social networks'
 });
 ```
 
@@ -181,38 +149,7 @@ $('#share2').socialLikes({
 ```
 
 
-### Refreshing counters
-
-By default counters for any unique URL requested only once. You can force new request with `forceUpdate` option:
-
-```javascript
-$('#share2').socialLikes({
-	forceUpdate: true
-});
-```
-
-
 ### Events
-
-#### `counter.social-likes`
-
-Triggers for every counter.
-
-```javascript
-$('.social-likes').on('counter.social-likes', function(event, service, number) {
-	// service: facebook, twitter, etc.
-});
-```
-
-#### `ready.social-likes`
-
-Triggers after all counters loaded.
-
-```javascript
-$('.social-likes').on('ready.social-likes', function(event, number) {
-	// number is total number of shares
-});
-```
 
 #### `popup_opened.social-likes`
 
@@ -336,21 +273,13 @@ $(document).on('popup_opened.social-likes', function(event, service) {
 
 ### The buttons don’t work, displayed without design or don’t displayed at all
 
-First look at your [browser’s console](http://wickedlysmart.com/hfjsconsole/). If you see an error “Uncaught ReferenceError: jQuery is not defined”:
+First look at your [browser’s console](http://wickedlysmart.com/hfjsconsole/).
 
-![](http://wow.sapegin.me/image/1f1h1d0z2d1j/Image%202014-11-19%20at%205.45.14%20PM.png)
+If you don’t see any errors check the following:
 
-Then you need to include jQuery into your page. Make sure you use version at least 1.7 (and lower than 2.0 if you need to support IE8) and you include jQuery before `social-likes.js`. The easiest way to do it is to use Google CDN:
+1. `social-likes.js` is included and the path is correct.
 
-```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-```
-
-If you don’t see any error check the following:
-
-1. `social-likes.js` is included after jQuery and the path is correct.
-
-2. `social-likes_flat.css` or `social-likes_classic.css` or `social-likes_birman.css` is included in <head> of your page and the path is correct.
+2. `social-likes_flat.css` or `social-likes_light.css` or `social-likes_birman.css` is included in the <head> of your page and the path is correct.
 
 So you need your page to look like this:
 
@@ -361,25 +290,9 @@ So you need your page to look like this:
 	<meta charset="utf-8">
 	<title>Welcome to my site!</title>
 	<link href="social-likes_birman.css" rel="stylesheet">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="social-likes.js"></script>
 	...
 ```
-
-### Counters don’t work
-
-In most cases if you don’t see counters it’s because social networks APIs return zeros. You could check API requests results in Network tab in your browser’s developer tools:
-
-![](http://cl.ly/image/013x2M01021N/Image%202014-03-06%20at%205.33.14%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D0%B4%D0%BD%D1%8F.png)
-
-Double check that you use canonical URLs (without extra parameters such as `utm_source`). You can change URL via [`data-url` option](#options).
-
-If you have more than one Social Likes blocks on a page with different URLs, Google+ counter will work only for the first block. Google+ counter also won’t work when you refresh counters with `forceUpdate` option or change URL dynamically.
-
-If your site have internationalized domain name (e.g. `президент.рф`) make sure you convert it to [Punycode](http://en.wikipedia.org/wiki/Punycode) (e.g. `xn--d1abbgf6aiiy.xn--p1ai`).
-
-If you’re sure that it’s a bug please file an issue **and provide a link** to a page with non-working counter.
-
 
 ## Release History
 
