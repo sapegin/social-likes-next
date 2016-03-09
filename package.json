@@ -1,7 +1,6 @@
 {
-  "name": "social-likes",
-  "version": "4.0.0",
-  "private": true,
+  "name": "social-likes-next",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "devDependencies": {
     "autoprefixer": "~6.1.0",
