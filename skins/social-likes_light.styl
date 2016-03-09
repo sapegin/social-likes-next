@@ -4,8 +4,6 @@
 
 @import './include/base'
 
-text_color = #fff;
-
 .social-likes {
 	min-height:36px;
 	margin:-.4em -.6em;
@@ -34,45 +32,42 @@ text_color = #fff;
 	}
 
 	// Vertical mode
-	&_vertical {
-		.social-likes__widget {
-			min-width:13em;
-		}
+	&_vertical &__widget {
+		min-width:13em;
 	}
 
 	// No text mode
 	&__widget_notext {
 		margin: 0.45em 0.30em;
 	}
-}
 
-// Facebook
-.social-likes__widget_facebook {
-	color:#3d5b95;
-}
+	// Facebook
+	&__widget_facebook {
+		color:#3d5b95;
+	}
 
-// Twitter
-.social-likes__widget_twitter {
-	color:#24aadd;
-}
+	// Twitter
+	&__widget_twitter {
+		color:#24aadd;
+	}
 
-// Google+
-.social-likes__widget_plusone {
-	color:#d23e30;
-}
+	// Google+
+	&__widget_plusone {
+		color:#d23e30;
+	}
 
-// Vkontakte
-.social-likes__widget_vkontakte {
-	color:#587e9f;
-}
+	// Vkontakte
+	&__widget_vkontakte {
+		color:#587e9f;
+	}
 
-// Odnoklassniki
-.social-likes__widget_odnoklassniki {
-	color:#f59310;
-}
+	// Odnoklassniki
+	&__widget_odnoklassniki {
+		color:#f59310;
+	}
 
-// Pinterest
-.social-likes__widget_pinterest {
-	color:#cb132d;
+	// Pinterest
+	&__widget_pinterest {
+		color:#cb132d;
+	}
 }
-
