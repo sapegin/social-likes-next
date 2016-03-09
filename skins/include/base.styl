@@ -1,7 +1,5 @@
 // Social Likes by Artem Sapegin. http://sapegin.github.io/social-likes/
 
-use('./include/loadSvgPath.js');
-
 // Tweak inverted text (light on dark) for OS X.
 tweak-inverted-text() {
 	-webkit-font-smoothing:antialiased;
@@ -87,27 +85,5 @@ tweak-inverted-text() {
 	// Vertical mode
 	&_vertical {
 		flex-direction:column;
-	}
-}
- 
-// Icons
-.social-likes__widget {
-	&_facebook {
-		content: loadSvgPath('../icons/facebook.svg');
-	}
-	&_odnoklassniki {
-		content: loadSvgPath('../icons/odnoklassniki.svg');
-	}
-	&_pinterest {
-		content: loadSvgPath('../icons/pinterest.svg');
-	}
-	&_plusone {
-		content: loadSvgPath('../icons/plusone.svg');
-	}
-	&_twitter {
-		content: loadSvgPath('../icons/twitter.svg');
-	}
-	&_vkontakte {
-		content: loadSvgPath('../icons/vkontakte.svg');
 	}
 }
