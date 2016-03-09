@@ -1,4 +1,4 @@
-import { assign, dataset, makeUrl, className, addParamsToUrl, openPopup, readCssContent, svg } from './util';
+import { assign, dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
 import * as services from './services';
 
 /**
@@ -40,7 +40,11 @@ export default class Button {
 		let service = this.options.service;
 		if (!service) {
 			// class="facebook"
-			service = [...this.widget.classList].find(cls => !!services[cls]);
+			service = toArray(this.widget.classList).reduce((_, cls) => {
+				if (services[cls]) {
+					return cls;
+				}
+			}, null);
 			if (!service) {
 				return;
 			}
@@ -59,7 +63,7 @@ export default class Button {
 
 		// Remove existing class (.facebook) with a proper one
 		widget.classList.remove(this.service);
-		widget.classList.add(...cx('widget').split(' '));
+		cx('widget').split(' ').forEach(cls => widget.classList.add(cls));
 
 		// Button:
 		// 1. Normal button with <button> tag.
@@ -91,8 +95,8 @@ export default class Button {
 			widget.classList.add(cx('widget_notext', null));
 		}
 
-		// Icon: read widget’s CSS content property
-		let svgHtml = svg(readCssContent(widget), cx('icon'));
+		// Icon
+		let svgHtml = svg(this.options.icon, cx('icon'));
 
 		widget.innerHTML = svgHtml + buttonHtml;
 	}

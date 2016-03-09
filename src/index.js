@@ -1,8 +1,9 @@
 import { prefix } from './config';
+import { toArray } from './util';
 import SocialLikes from './social-likes';
 
 // Symbol to store an instance reference in a DOM node
-const symbol = Symbol(prefix);
+const symbol = 'socialLikes';
 
 /**
  * Initialize Social Likes on a DOM element.
@@ -25,7 +26,7 @@ function init(elem, options = {}) {
 function autoInit(wait = false) {
 	let elements = document.querySelectorAll(`.${prefix}`);
 	if (elements) {
-		[...elements].forEach(init);
+		toArray(elements).forEach(init);
 	}
 	else if (wait) {
 		// No elements found. Wait for DOM content loaded to try again in case the script was included in the <head>.

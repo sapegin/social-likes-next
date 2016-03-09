@@ -161,13 +161,13 @@ export function className(elem, mod) {
 }
 
 /**
- * Read CSS content property.
+ * Convert array like object to array.
  *
- * @param {HTMLElement} node DOM node.
- * @return {String}
+ * @param {object} list Array like object.
+ * @returns {Array}
  */
-export function readCssContent(node) {
-	return getComputedStyle(node).content.replace(/["']/g, '');
+export function toArray(list) {
+	return Array.prototype.slice.call(list);
 }
 
 /**

@@ -1,5 +1,5 @@
 import Button from './button';
-import { assign } from './util';
+import { assign, toArray } from './util';
 import { prefix } from './config';
 
 // Default options
@@ -21,11 +21,12 @@ export default class SocialLikes {
 
 		let buttons = this.container.children;
 
-		this.buttons = [...buttons].map((elem) => {
+		this.buttons = toArray(buttons).map((elem) => {
 			return new Button(elem, this.options);
 		});
 
-		this.container.classList.add(prefix, `${prefix}_visible`);
+		this.container.classList.add(prefix);
+		this.container.classList.add(`${prefix}_visible`);
 	}
 
 	update(options) {
