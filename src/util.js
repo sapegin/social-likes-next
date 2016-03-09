@@ -39,26 +39,16 @@ else {
 export { assign };
 
 /**
- * Return node.dataset or plain object for IE 10.
- * Based on https://gist.github.com/brettz9/4093766#file_html5_dataset.js
+ * Return node.dataset as an object
  *
  * @param {Node} node DOM node.
  * @return {Object}
  */
 export function dataset(node) {
-	if (typeof node.dataset === 'object') {
-		return node.dataset;
-	}
-
 	let data = {};
-	for (let idx = 0; idx < node.attributes.length; idx++) {
-		let attribute = node.attributes[idx];
-		if (attribute && attribute.name && (/^data-\w[\w\-]*$/).test(attribute.name)) {
-			let name = attribute.name.substr(5).replace(/-./g, n0 => n0.charAt(1).toUpperCase());
-			data[name] = attribute.value;
-		}
+	for (let key in node.dataset) {
+		data[key] = node.dataset[key];
 	}
-
 	return data;
 }
 
