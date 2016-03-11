@@ -49,10 +49,10 @@ test('className should return a class name with a modifier', t => {
 });
 
 test('svg should return an SVG with given paths and class name', t => {
-	let r = svg('foo bar', 'facebook');
-	t.is(r.trim(),
-		'<svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">\n' +
-		'\t\t\t<path d="foo bar"/>\n' +
-		'\t\t</svg>'
+	let r = svg('foo;bar', 'facebook');
+	t.is(r,
+		'\n\t\t<svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">\n' +
+		'\t\t\t<path d="foo"/>\n<path d="bar"/>\n' +
+		'\t\t</svg>\n\t'
 	);
 });

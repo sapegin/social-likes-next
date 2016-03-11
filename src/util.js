@@ -191,7 +191,7 @@ export function svg(pathData, cls) {
 	let paths = pathData.split(';').map(p => `<path d="${p}"/>`);
 	return `
 		<svg class="${cls}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-			${paths}
+			${paths.join('\n')}
 		</svg>
 	`;
 }
