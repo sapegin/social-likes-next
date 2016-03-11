@@ -57,7 +57,7 @@ export default class Button {
 	 * Initialize markup of a button.
 	 */
 	initHtml() {
-		let cx = this.className.bind(this);
+		let cx = name => className(name, this.service);
 		let widget = this.widget;
 		let options = this.options;
 
@@ -92,7 +92,7 @@ export default class Button {
 			`;
 		}
 		else {
-			widget.classList.add(cx('widget_notext', null));
+			widget.classList.add(className('widget_notext'));
 		}
 
 		// Icon
@@ -108,17 +108,6 @@ export default class Button {
 		if (!this.options.clickUrl) {
 			this.widget.addEventListener('click', this.onClick.bind(this));
 		}
-	}
-
-	/**
-	 * Generate class name: .social-likes__elem_mod.
-	 *
-	 * @param {String} elem Element name.
-	 * @param {String} [mod] Modifier (service name by default).
-	 * @return {String}
-	 */
-	className(elem, mod = this.service) {
-		return className(elem, mod);
 	}
 
 	/**
