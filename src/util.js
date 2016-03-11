@@ -1,42 +1,52 @@
 import { prefix } from './config';
 
 /**
- * Object.assign ponyfill.
+ * Object deep merge.
+ * https://github.com/KyleAMathews/deepmerge
  *
  * @param {Object} target
- * @param {Object} ...sources
+ * @param {Object} src
  */
-let assign;
-if (Object.assign) {
-	assign = Object.assign;
-}
-else {
-	// https://github.com/rubennorte/es6-object-assign/
-	assign = function(target) {
-		if (process.env.NODE_ENV === 'development' && (target === undefined || target === null)) {
-			throw new TypeError('assign: cannot convert first argument to object');
-		}
+export function deepmerge(target, src) {
+	let array = Array.isArray(src);
+	let dst = array ? [] : {};
 
-		let to = Object(target);
-		for (let i = 1; i < arguments.length; i++) {
-			let nextSource = arguments[i];
-			if (nextSource === undefined || nextSource === null) {
-				continue;
+	if (array) {
+		target = target || [];
+		dst = dst.concat(target);
+		src.forEach((e, i) => {
+			if (typeof dst[i] === 'undefined') {
+				dst[i] = e;
 			}
-
-			let keysArray = Object.keys(Object(nextSource));
-			for (let nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
-				let nextKey = keysArray[nextIndex];
-				let desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
-				if (desc !== undefined && desc.enumerable) {
-					to[nextKey] = nextSource[nextKey];
-				}
+			else if (typeof e === 'object') {
+				dst[i] = deepmerge(target[i], e);
 			}
+			else if (target.indexOf(e) === -1) {
+				dst.push(e);
+			}
+		});
+	}
+	else {
+		if (target && typeof target === 'object') {
+			Object.keys(target).forEach(key => {
+				dst[key] = target[key];
+			});
 		}
-		return to;
-	};
+		Object.keys(src).forEach(key => {
+			if (typeof src[key] !== 'object' || !src[key]) {
+				dst[key] = src[key];
+			}
+			else if (!target[key]) {
+				dst[key] = src[key];
+			}
+			else {
+				dst[key] = deepmerge(target[key], src[key]);
+			}
+		});
+	}
+
+	return dst;
 }
-export { assign };
 
 /**
  * Return node.dataset as an object

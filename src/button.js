@@ -1,5 +1,5 @@
-import { assign, dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
 import * as services from './services';
+import { deepmerge, dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
 
 /**
  * A button.
@@ -11,7 +11,7 @@ export default class Button {
 	constructor(widget, options) {
 		this.widget = widget;
 		this.data = dataset(widget);
-		this.options = assign({}, options, this.data);
+		this.options = deepmerge(options, this.data);
 
 		this.initService();
 		if (this.service) {
@@ -29,7 +29,7 @@ export default class Button {
 	 * @param {Object} options New options.
 	 */
 	update(options) {
-		assign(this.options, options);
+		this.options = deepmerge(this.options, options);
 	}
 
 	/**
@@ -50,7 +50,7 @@ export default class Button {
 			}
 		}
 		this.service = service;
-		assign(this.options, services[service]);
+		this.options = deepmerge(this.options, services[service]);
 	}
 
 	/**
@@ -136,7 +136,7 @@ export default class Button {
 		}
 		if (ok) {
 			let url = this.makeUrl(options.popupUrl);
-			let params = assign({}, this.data, this.options.data);
+			let params = deepmerge(this.data, this.options.data);
 			url = addParamsToUrl(url, params);
 			openPopup(url, {
 				width: options.popupWidth,
