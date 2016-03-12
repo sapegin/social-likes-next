@@ -74,12 +74,11 @@ export default class Button {
 		// Button:
 		// 1. Normal button with <button> tag.
 		// 2. Link <a> if the service has the clickUrl option.
-		// 3. Link <a> with .social-likes__invisible-button class if clickUrl option is true but widget markup has no text.
+		// 3. Link <a> with .social-likes__invisible-button class if has clickUrl option but widget markup has no text.
 		// 4. No button if there’s no text in the markup and no clickUrl option.
 		let buttonHtml = '';
-		let clickUrl = options.clickUrl;
 		let oldHtml = widget.innerHTML.trim();
-		if (clickUrl || oldHtml) {
+		if (options.clickUrl || oldHtml) {
 			let buttonTag = 'div';
 			let buttonHref = '';
 			let buttonClasses = cx('button');
