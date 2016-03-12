@@ -1,5 +1,5 @@
 import Button from './button';
-import { deepmerge, toArray } from './util';
+import { deepmerge, dataset, toArray } from './util';
 import { prefix } from './config';
 
 // Default options
@@ -17,7 +17,7 @@ const defaults = {
 export default class SocialLikes {
 	constructor(container, options = {}) {
 		this.container = container;
-		this.options = deepmerge(defaults, options);
+		this.options = deepmerge(deepmerge(defaults, options), dataset(container));
 
 		let buttons = this.container.children;
 		this.buttons = toArray(buttons).map(elem => {
