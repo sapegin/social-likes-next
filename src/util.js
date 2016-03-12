@@ -6,6 +6,7 @@ import { prefix } from './config';
  *
  * @param {Object} target
  * @param {Object} src
+ * @return {Object}
  */
 export function deepmerge(target, src) {
 	let array = Array.isArray(src);
@@ -125,10 +126,8 @@ export function openPopup(url, { width, height, name }) {
 		win.focus();
 		return win;
 	}
-	else {
-		location.href = url;
-		return null;
-	}
+	location.href = url;
+	return null;
 }
 
 /**

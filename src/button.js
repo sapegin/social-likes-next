@@ -127,7 +127,7 @@ export default class Button {
 	makeUrl(urlTemplate) {
 		return makeUrl(urlTemplate, {
 			url: this.options.url,
-			title: this.options.title
+			title: this.options.title,
 		});
 	}
 
@@ -153,7 +153,7 @@ export default class Button {
 			openPopup(url, {
 				width: options.popupWidth,
 				height: options.popupHeight,
-				name: `sl_${this.service}`
+				name: `sl_${this.service}`,
 			});
 		}
 	}

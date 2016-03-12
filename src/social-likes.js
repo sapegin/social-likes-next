@@ -5,7 +5,7 @@ import { prefix } from './config';
 // Default options
 const defaults = {
 	url: window.location.href.replace(window.location.hash, ''),
-	title: document.title
+	title: document.title,
 };
 
 /**
@@ -20,8 +20,7 @@ export default class SocialLikes {
 		this.options = deepmerge(defaults, options);
 
 		let buttons = this.container.children;
-
-		this.buttons = toArray(buttons).map((elem) => {
+		this.buttons = toArray(buttons).map(elem => {
 			return new Button(elem, this.options);
 		});
 
@@ -38,7 +37,7 @@ export default class SocialLikes {
 		this.options = deepmerge(this.options, options);
 
 		// Update each button
-		this.buttons.forEach((button) => {
+		this.buttons.forEach(button => {
 			button.update(options);
 		});
 	}
