@@ -13,6 +13,11 @@ test('objectToQueryString should convert an object to a query string', t => {
 	t.is(r, 'a=foo&b=42');
 });
 
+test('objectToQueryString should skip nulls and empty strings', t => {
+	let r = objectToQueryString({a: 'foo', b: null, c: ''});
+	t.is(r, 'a=foo');
+});
+
 test('addParamsToUrl should append params to an URL', t => {
 	let r = addParamsToUrl('/foo/bar', {a: 'foo', b: 42});
 	t.is(r, '/foo/bar?a=foo&b=42');

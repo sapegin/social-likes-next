@@ -87,7 +87,10 @@ export function addParamsToUrl(url, params) {
  */
 export function objectToQueryString(params) {
 	return Object.keys(params).reduce((pairs, key) => {
-		pairs.push(key + '=' + encodeURIComponent(params[key]));
+		let value = params[key];
+		if (value !== null && value !== '') {
+			pairs.push(key + '=' + encodeURIComponent(value));
+		}
 		return pairs;
 	}, []).join('&');
 }

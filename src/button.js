@@ -18,6 +18,9 @@ export default class Button {
 		this.widget = widget;
 		this.data = dataset(widget);
 		this.options = deepmerge(options, this.data);
+		if (this.data.service) {
+			this.data.service = null;
+		}
 
 		this.initService();
 		if (this.service) {
