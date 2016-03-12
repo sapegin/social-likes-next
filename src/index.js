@@ -18,7 +18,7 @@ export default function init(elem, options = {}) {
 		instance.update(options);
 	}
 	else {
-		elem[symbol] = new SocialLikes(elem, options);
+		instance = elem[symbol] = new SocialLikes(elem, options);
 	}
 	return instance;
 }
