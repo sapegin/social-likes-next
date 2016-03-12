@@ -128,6 +128,12 @@ export default class Button {
 		});
 	}
 
+	makeUrlWithParams(urlTemplate) {
+		let url = this.makeUrl(urlTemplate);
+		let params = deepmerge(this.data, this.options.data || {});
+		return addParamsToUrl(url, params);
+	}
+
 	/**
 	 * Button click handler.
 	 *
@@ -140,9 +146,7 @@ export default class Button {
 			ok = options.click.call(this, event);
 		}
 		if (ok) {
-			let url = this.makeUrl(options.popupUrl);
-			let params = deepmerge(this.data, this.options.data);
-			url = addParamsToUrl(url, params);
+			let url = this.makeUrlWithParams(options.popupUrl);
 			openPopup(url, {
 				width: options.popupWidth,
 				height: options.popupHeight,
