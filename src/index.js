@@ -26,7 +26,7 @@ function init(elem, options = {}) {
 function autoInit(wait = false) {
 	let elements = document.querySelectorAll(`.${prefix}`);
 	if (elements) {
-		toArray(elements).forEach(init);
+		toArray(elements).forEach(elem => init(elem));
 	}
 	else if (wait) {
 		// No elements found. Wait for DOM content loaded to try again in case the script was included in the <head>.
