@@ -185,12 +185,15 @@ export function toArray(list) {
 /**
  * Returns SVG code of an icon.
  *
- * @param {String} pathData SVG path of an icon.
- * @param {String} cls CSS class name.
- * @return {String}
+ * @param {string|string[]} paths SVG path of an icon.
+ * @param {string} cls CSS class name.
+ * @return {string}
  */
-export function svg(pathData, cls) {
-	let paths = pathData.split(';').map(p => `<path d="${p}"/>`);
+export function svg(paths, cls) {
+	if (!Array.isArray(paths)) {
+		paths = [paths];
+	}
+	paths = paths.map(p => `<path d="${p}"/>`);
 	return `
 		<svg class="${cls}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 			${paths.join('\n')}

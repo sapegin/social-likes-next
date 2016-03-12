@@ -25,7 +25,7 @@ var filepath = path.resolve(__dirname, '../skins/icons/' + process.argv[2] + '.s
 var svg = fs.readFileSync(filepath, {encoding: 'utf8'});
 var paths = getAllMatches(svg, /<path d="([^"]+)"/g);
 if (paths.length) {
-	console.log(paths.join(';'));
+	console.log(JSON.stringify(paths));
 }
 else {
 	throw new Error('Cannot find SVG path in ' + filepath);

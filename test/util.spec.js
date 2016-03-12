@@ -53,8 +53,17 @@ test('className should return a class name with a modifier', t => {
 	t.is(r, 'social-likes__button social-likes__button_big');
 });
 
-test('svg should return an SVG with given paths and class name', t => {
-	let r = svg('foo;bar', 'facebook');
+test('svg should return an SVG with given path and class name', t => {
+	let r = svg('foo', 'facebook');
+	t.is(r,
+		'\n\t\t<svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">\n' +
+		'\t\t\t<path d="foo"/>\n' +
+		'\t\t</svg>\n\t'
+	);
+});
+
+test('svg should accept paths as an array', t => {
+	let r = svg(['foo', 'bar'], 'facebook');
 	t.is(r,
 		'\n\t\t<svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">\n' +
 		'\t\t\t<path d="foo"/>\n<path d="bar"/>\n' +
