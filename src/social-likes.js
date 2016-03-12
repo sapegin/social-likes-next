@@ -16,29 +16,25 @@ const defaults = {
  */
 export default class SocialLikes {
 	constructor(container, options = {}) {
-		this.container = container;
-		this.options = deepmerge(deepmerge(defaults, options), dataset(container));
+		container.classList.add(prefix);
 
-		let buttons = this.container.children;
-		this.buttons = toArray(buttons).map(elem => {
-			return new Button(elem, this.options);
+		// Options: default < constructor < container data-attributes
+		options = deepmerge(deepmerge(defaults, options), dataset(container));
+		this.url = options.url;
+
+		this.buttons = toArray(container.children).map(elem => {
+			return new Button(elem, options);
 		});
 
-		this.container.classList.add(prefix);
-		this.container.classList.add(`${prefix}_visible`);
+		container.classList.add(`${prefix}_visible`);
 	}
 
 	update(options) {
-		if (options.url === this.options.url) {
+		if (options.url === this.url) {
 			return;
 		}
 
-		// Update options
-		this.options = deepmerge(this.options, options);
-
 		// Update each button
-		this.buttons.forEach(button => {
-			button.update(options);
-		});
+		this.buttons.forEach(button => button.update(options));
 	}
 }
