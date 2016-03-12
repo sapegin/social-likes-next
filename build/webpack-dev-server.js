@@ -3,6 +3,8 @@ var express = require('express');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.development');
 
+/* eslint-disable no-console */
+
 var serverPort = 8506;
 var serverHost = '0.0.0.0';
 

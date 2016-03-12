@@ -28,7 +28,9 @@ export default class Button {
 			this.initEvents();
 		}
 		else if (process.env.NODE_ENV === 'development') {
+			/* eslint-disable no-console */
 			console.error(`Social Likes: service for widget "${widget.className}" not found.`);
+			/* eslint-enable no-console */
 		}
 	}
 

@@ -6,6 +6,8 @@
  *   svgpath facebook -> M13 0H3C1 0 0 1 0 3v10c0...
  */
 
+/* eslint-disable no-console */
+
 var fs = require('fs');
 var path = require('path');
 
