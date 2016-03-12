@@ -9,22 +9,22 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loaders: ['babel'],
-				include: path.resolve('src')
-			}
-		]
+				include: path.resolve('src'),
+			},
+		],
 	},
 	entry: [
-		'./src/index.js'
+		'./src/index.js',
 	],
 	output: {
 		path: path.resolve('lib'),
 		library: 'SocialLikesNext',
-		libraryTarget: 'umd'
+		libraryTarget: 'umd',
 	},
 	resolve: {
-		extensions: ['', '.js']
+		extensions: ['', '.js'],
 	},
 	plugins: [
-		new webpack.optimize.OccurenceOrderPlugin()
-	]
+		new webpack.optimize.OccurenceOrderPlugin(),
+	],
 };

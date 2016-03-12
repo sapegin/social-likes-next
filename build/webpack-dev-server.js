@@ -11,7 +11,7 @@ var compiler = webpack(webpackConfig);
 
 // Webpack bundle
 app.use(require('webpack-dev-middleware')(compiler, {
-	noInfo: true
+	noInfo: true,
 }));
 
 // Skins

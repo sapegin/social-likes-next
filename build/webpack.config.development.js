@@ -7,11 +7,11 @@ var baseConfig = require('./webpack.config.base');
 module.exports = merge(baseConfig, {
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development')
+			'process.env.NODE_ENV': JSON.stringify('development'),
 		}),
 		new HtmlWebpackPlugin({
 			template: path.resolve('specs/specs.html'),
-			inject: true
-		})
-	]
+			inject: true,
+		}),
+	],
 });

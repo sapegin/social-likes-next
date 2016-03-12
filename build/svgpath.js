@@ -22,7 +22,7 @@ function getAllMatches(string, regexp) {
 }
 
 var filepath = path.resolve(__dirname, '../skins/icons/' + process.argv[2] + '.svg');
-var svg = fs.readFileSync(filepath, {encoding: 'utf8'});
+var svg = fs.readFileSync(filepath, { encoding: 'utf8' });
 var paths = getAllMatches(svg, /<path d="([^"]+)"/g);
 if (paths.length) {
 	console.log(JSON.stringify(paths));

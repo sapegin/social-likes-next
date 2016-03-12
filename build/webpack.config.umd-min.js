@@ -4,14 +4,14 @@ var baseConfig = require('./webpack.config.umd');
 
 module.exports = merge(baseConfig, {
 	output: {
-		filename: 'social-likes.min.js'
+		filename: 'social-likes.min.js',
 	},
 	plugins: [
 		new webpack.optimize.UglifyJsPlugin({
 			compressor: {
 				screw_ie8: true,
-				warnings: false
-			}
-		})
-	]
+				warnings: false,
+			},
+		}),
+	],
 });

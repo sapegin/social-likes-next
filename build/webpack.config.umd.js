@@ -7,12 +7,12 @@ var baseConfig = require('./webpack.config.base');
 module.exports = merge(baseConfig, {
 	output: {
 		path: path.resolve('dist'),
-		filename: 'social-likes.js'
+		filename: 'social-likes.js',
 	},
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('production')
+			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
-		new BannerPlugin(baseConfig._banner)
-	]
+		new BannerPlugin(baseConfig._banner),
+	],
 });
