@@ -1,5 +1,11 @@
-import * as services from './services';
 import { deepmerge, dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
+import * as baseServices from './services';
+
+// Merge base services with user services
+const services = window.socialLikesButtons
+	? deepmerge(baseServices, window.socialLikesButtons)
+	: baseServices
+;
 
 /**
  * A button.
