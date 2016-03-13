@@ -18,6 +18,11 @@ test('objectToQueryString should skip nulls and empty strings', t => {
 	t.is(r, 'a=foo');
 });
 
+test('objectToQueryString should skip param from ignore list', t => {
+	let r = objectToQueryString({ a: 'foo', b: 42 }, ['a']);
+	t.is(r, 'b=42');
+});
+
 test('addParamsToUrl should append params to an URL', t => {
 	let r = addParamsToUrl('/foo/bar', { a: 'foo', b: 42 });
 	t.is(r, '/foo/bar?a=foo&b=42');
@@ -26,6 +31,11 @@ test('addParamsToUrl should append params to an URL', t => {
 test('addParamsToUrl should append params to an URL with existing params', t => {
 	let r = addParamsToUrl('/foo/bar?baz=bar', { a: 'foo', b: 42 });
 	t.is(r, '/foo/bar?baz=bar&a=foo&b=42');
+});
+
+test('addParamsToUrl should skip param from ignore list', t => {
+	let r = addParamsToUrl('/foo/bar', { a: 'foo', b: 42 }, ['a']);
+	t.is(r, '/foo/bar?b=42');
 });
 
 test('template should render a template', t => {

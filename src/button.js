@@ -18,9 +18,6 @@ export default class Button {
 		this.widget = widget;
 		this.data = dataset(widget);
 		this.options = deepmerge(options, this.data);
-		if (this.data.service) {
-			this.data.service = null;
-		}
 
 		this.initService();
 		if (this.service) {
@@ -136,7 +133,7 @@ export default class Button {
 	makeUrlWithParams(urlTemplate) {
 		let url = this.makeUrl(urlTemplate);
 		let params = deepmerge(this.data, this.options.data || {});
-		return addParamsToUrl(url, params);
+		return addParamsToUrl(url, params, ['service', 'title', 'url']);
 	}
 
 	/**

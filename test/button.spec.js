@@ -142,15 +142,14 @@ test('Button.makeUrl should return a URL with URL and title of the current butto
 	t.is(r, 'http://bar.com/?url=http%3A%2F%2Ffoo.com%2F&title=Pony');
 });
 
-test('Button.makeUrlWithParams should return a URL with appended data-attributes, should ignore data-service', t => {
+test('Button.makeUrlWithParams should return a URL with appended data-attributes, should ignore service, url, etc.', t => {
 	let widget = createWidget({
 		'data-service': 'facebook',
 		'data-media': 'http://foo.com/pony.jpg',
+		'data-url': 'http://bar.com/',
+		'data-title': 'Pony',
 	});
-	let button = new Button(widget, {
-		url: 'http://bar.com/',
-		title: 'Pony',
-	});
+	let button = new Button(widget);
 
 	let r = button.makeUrlWithParams('http://baz.com/?url={url}&title={title}');
 

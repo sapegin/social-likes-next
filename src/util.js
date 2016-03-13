@@ -66,12 +66,13 @@ export function dataset(node) {
 /**
  * Append params to the URL.
  *
- * @param {String} url Base URL.
+ * @param {string} url Base URL.
  * @param {Object} params Params to append.
- * @return {String}
+ * @param {string[]} [ignore] List of keys to ignore.
+ * @return {string}
  */
-export function addParamsToUrl(url, params) {
-	params = objectToQueryString(params);
+export function addParamsToUrl(url, params, ignore = []) {
+	params = objectToQueryString(params, ignore);
 	if (!params) {
 		return url;
 	}
@@ -84,12 +85,13 @@ export function addParamsToUrl(url, params) {
  * Convert object to a query string: a=1&b=2.
  *
  * @param {Object} params Parameters.
- * @return {String}
+ * @param {string[]} [ignore] List of keys to ignore.
+ * @return {string}
  */
-export function objectToQueryString(params) {
+export function objectToQueryString(params, ignore = []) {
 	return Object.keys(params).reduce((pairs, key) => {
 		let value = params[key];
-		if (value !== null && value !== '') {
+		if (value !== null && value !== '' && ignore.indexOf(key) === -1) {
 			pairs.push(key + '=' + encodeURIComponent(value));
 		}
 		return pairs;
