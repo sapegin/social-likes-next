@@ -5,17 +5,17 @@ I love pull requests. And following this simple guidelines will make your pull r
 
 ## Submitting pull requests
 
-1. Create a new branch, please don’t work in master directly.
-2. Add failing tests (if there’re any tests in project) for the change you want to make. Run tests (see below) to see the tests fail.
+1. Create a new branch, don’t work in master directly.
+2. Add failing tests for the change you want to make. Run tests (see below) to see the tests fail.
 3. Hack on.
 4. Run tests to see if the tests pass. Repeat steps 2–4 until done.
-5. Update the documentation to reflect any changes.
+5. Update the documentation to reflect your changes.
 6. Push to your fork and submit a pull request.
 
 
 ## JavaScript code style
 
-See [ESLint](.eslintrc) config files for more details.
+See [ESLint config](https://github.com/tamiadev/eslint-config-tamia) for more details.
 
 - Tab indentation.
 - Single-quotes.
@@ -40,11 +40,11 @@ function foo(bar, fum) {
 
     let hello = 'Hello';
     let ret = 0;
-    for (let barIdx = 0; barIdx < bar.length; barIdx++) {
-        if (bar[barIdx] === hello) {
+    bar.forEach(item => {
+        if (item === hello) {
             ret += fum(bar[barIdx]);
         }
-    }
+    });
 
     return ret;
 }
@@ -54,7 +54,7 @@ function foo(bar, fum) {
 ## Other notes
 
 - If you have commit access to repo and want to make big change or not sure about something, make a new branch and open pull request.
-- Don’t commit generated files: compiled from Stylus CSS, minified JavaScript, etc.
+- Don’t commit generated files: compiled from Stylus CSS, transpiled or minified JavaScript, etc.
 - Don’t change version number and changelog.
 - Install [EditorConfig](http://editorconfig.org/) plugin for your code editor.
 - Feel free to [ask me](http://sapegin.me/contacts) anything you need.
@@ -79,10 +79,4 @@ Run tests:
 
 ```bash
 npm test
-```
-
-Build:
-
-```bash
-npm run build
 ```

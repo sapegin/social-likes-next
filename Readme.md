@@ -13,7 +13,7 @@ Beautiful share buttons for popular social networks: Facebook, Twitter, Google+,
 
 This is a modern version of the [Social Likes for jQuery](https://github.com/sapegin/social-likes). Main distinctions:
 
-- No dependencies.
+- No jQuery dependency.
 - No counters.
 - No single button mode.
 - SVG icons.
@@ -21,23 +21,70 @@ This is a modern version of the [Social Likes for jQuery](https://github.com/sap
 
 ## Installation and configuration
 
+### Installation from npm
+
+It’s recommended to install the `social-likes-next` from npm:
+
 ```bash
 npm install --save social-likes-next
 ```
 
-Add to your HTML:
+And use a bundler like Webpack or Browserify:
+
+```javascript
+// ES6
+import 'social-likes-next';
+import 'social-likes-next/lib/social-likes_flat.css';  // Flat skin
+// import 'social-likes-next/lib/social-likes_light.css';  // Light skin
+// import 'social-likes-next/lib/social-likes_birman.css';  // Birman skin
+
+// ES5
+require('social-likes-next');
+require('social-likes-next/lib/social-likes_flat.css');  // Flat skin
+// require('social-likes-next/lib/social-likes_light.css');  // Light skin
+// require('social-likes-next/lib/social-likes_birman.css');  // Birman skin
+```
+
+### Installation from CDN
+
+You can also use [npmcdn](https://npmcdn.com/):
+
+1. Add a script to your the bottom of your HTML’s `<body>`:
 
 ```html
-<link rel="stylesheet" href="node_modules/social-likes-next/dist/social-likes_flat.css">
-...
-<script src="node_modules/social-likes-next/dist/social-likes.min.js"></script>
-...
+<script src="https://npmcdn.com/social-likes-next/dist/social-likes.min.js"></script>
+```
+
+2. Add a stylesheet.
+
+Choose one of the CSS files:
+
+* `social-likes_flat.css`: Flat skin;
+* `social-likes_light.css`: Light skin;
+* `social-likes_birman.css`: Birman skin.
+
+And add it to your HTML’s `<head>`:
+
+```html
+<link rel="stylesheet" href="https://npmcdn.com/social-likes-next/dist/social-likes_flat.css">
+```
+
+### Adding button to your page
+
+Add this HTML where you want to have share buttons:
+
+```html
 <div class="social-likes">
 	<div data-service="facebook" title="Share link on Facebook">Facebook</div>
 	<div data-service="twitter" title="Share link on Twitter">Twitter</div>
 	<div data-service="plusone" title="Share link on Google+">Google+</div>
+	<!-- <div data-service="pinterest" title="Share link on Pinterest" data-media="image link, required">Google+</div> -->
+	<!-- <div data-service="vkontakte" title="Share link on Vkontakte">Google+</div> -->
+	<!-- <div data-service="odnoklassniki" title="Share link on Odnoklassniki">Google+</div> -->
 </div>
 ```
+
+You can modify the labels or remove them.
 
 ## Advanced configuration
 
@@ -49,7 +96,7 @@ All buttons in a row.
 
 ```html
 <div class="social-likes">
-	<div class="facebook" title="Share link on Facebook">Facebook</div>
+	<div data-service="facebook" title="Share link on Facebook">Facebook</div>
 	...
 </div>
 ```
@@ -60,22 +107,20 @@ All buttons in a column.
 
 ```html
 <div class="social-likes social-likes_vertical">
-	<div class="facebook" title="Share link on Facebook">Facebook</div>
+	<div data-service="facebook" title="Share link on Facebook">Facebook</div>
 	...
 </div>
 ```
 
 ### Options
 
-Options define via HTML data attributes or JavaScript parameters object.
-
 `url`
 
-URL of shareable page. Current page by default.
+URL of a shareable page. Current page by default.
 
 `title`
 
-Title for Twitter, Vkontakte and LiveJournal. Current page’s title by default.
+Title for Twitter and Vkontakte. Current page’s title by default.
 
 Examples:
 
@@ -85,30 +130,31 @@ Examples:
 </div>
 ```
 
-```js
-$('.social-likes').socialLikes({
-	url: 'https://github.com/sapegin/social-likes/',
-	title: 'Beautiful “like” buttons with counters for popular social networks'
-});
-```
+or:
 
+```html
+<div class="social-likes">
+	<div data-service="twitter" title="Share link on Twitter" data-title="Landscapists of Russia">Twitter</div>
+	…
+</div>
+```
 
 ### Services specific options
 
 #### Twitter
 
-You can specify `via` (site’s or your own Twitter) and `related` (any other Twitter you want to advertise) values for `<div class="twitter">`:
+You can specify `via` (site’s or your own Twitter) and `related` (any other Twitter you want to advertise) on Twitter button:
 
 ```html
-<div class="twitter" data-via="sapegin" data-related="Landscapists">Twitter</div>
+<div data-service="twitter" data-via="sapegin" data-related="Landscapists">Twitter</div>
 ```
 
 #### Pinterest
 
-You should specify an image URL via data-media attribute on `<div class="pinterest">`:
+You should specify an image URL via `data-media` attribute on Pinterest button:
 
 ```html
-<div class="pinterest" data-media="http://example.com/image/url.jpg">Pinterest</div>
+<div data-service="pinterest" data-media="http://example.com/image/url.jpg">Pinterest</div>
 ```
 
 ### Manual initialization
@@ -117,15 +163,25 @@ Could be useful on dynamic (AJAX) websites.
 
 ```html
 <div id="share">
-	<div class="facebook">Facebook</div>
+	<div data-service="facebook">Facebook</div>
 	...
 </div>
 ```
 
 ```javascript
-$('#share').socialLikes();
+import socialLikes from 'social-likes-next';
+socialLikes(document.getElementById('share'));
 ```
 
+You can also specify options:
+
+```javascript
+import socialLikes from 'social-likes-next';
+socialLikes(document.getElementById('share'), {
+	url: 'http://landscapists.info/,
+	title: 'Landscapists of Russia',
+});
+```
 
 ### Dynamic URL changing
 
@@ -133,13 +189,13 @@ You can dynamically replace URL, title and Pinterest image without reinitializat
 
 ```html
 <div id="share2" class="social-likes" data-url="http://example.com/" data-title="My example">
-	<div class="facebook">Facebook</div>
+	<div data-service="facebook">Facebook</div>
 	...
 </div>
 ```
 
 ```javascript
-$('#share2').socialLikes({
+socialLikes(document.getElementById('share2'), {
 	url: 'http://github.com/',
 	title: 'GitHub',
 	data: {
@@ -148,59 +204,15 @@ $('#share2').socialLikes({
 });
 ```
 
-
-### Events
-
-#### `popup_opened.social-likes`
-
-Triggers after popup window opened.
-
-```javascript
-$('.social-likes').on('popup_opened.social-likes', function(event, service, win) {
-	// win is popup window handler (window.open())
-});
-```
-
-#### `popup_closed.social-likes`
-
-Triggers after popup window closed.
-
-```javascript
-$('.social-likes').on('popup_closed.social-likes', function(event, service) {
-	// Request new counters
-	$(event.currentTarget).socialLikes({forceUpdate: true});
-
-	// Or just increase the number
-	var counter = $(event.currentTarget).find('.social-likes__counter_' + service);
-	counter.text(+(counter.text()||0)+1).removeClass('social-likes__counter_empty');
-});
-```
-
-
 ### Adding your own button
-
-You can find some custom buttons in `contrib` folder.
 
 Define `socialLikesButtons` object:
 
 ```javascript
 var socialLikesButtons = {
-	surfingbird: {
-		popupUrl: 'http://surfingbird.ru/share?url={url}',
-		popupWidth: 650,
-		popupHeight: 500
-	}
-};
-```
-
-Or with a custom click handler:
-
-```javascript
-var socialLikesButtons = {
-	livejournal: {
-		click: function(e) {
-			// this.widget.data('something')
-		}
+	github: {
+		icon: 'M8 .173C3.58.173...',
+		clickUrl: 'http://github.com/sapegin'
 	}
 };
 ```
@@ -208,20 +220,21 @@ var socialLikesButtons = {
 Add some CSS:
 
 ```css
-.social-likes__button_surfingbird {
-	background: #f2f3f5;
-	color: #596e7e;
-	border-color: #ced5e2;
-	}
-.social-likes__icon_surfingbird {
-	background: url(http://surfingbird.ru/img/share-icon.png) no-repeat 2px 3px;
-	}
+.social-likes__icon_github {
+	color: #333;
+}
+.social-likes__widget_github:hover,
+.social-likes__widget_github:active,
+.social-likes__widget_github:focus {
+	background: #333;
+	border-color: #333;
+}
 ```
 
 And use it like any other button:
 
 ```html
-<div class="surfingbird">Surf</div>
+<div data-service="github">GitHub</div>
 ```
 
 See sources (`src` folder) for available options and class names and `contrib` folder for custom buttons examples.
@@ -254,21 +267,6 @@ You can add additional Twitter data using [Twitter Card](https://dev.twitter.com
 
 If you’re experiencing any problems with meta data try [Open Graph Debugger](https://developers.facebook.com/tools/debug/) and [Twitter Card Validator](https://dev.twitter.com/docs/cards/validation/validator).
 
-
-### How to use Social Likes with Wordpress, etc.
-
-See [wiki](https://github.com/sapegin/social-likes/wiki/How-to-use-Social-Likes-with-Wordpress,-etc.).
-
-### How to track activity with Google Analytics
-
-You can track how many people click on each social button on your site with Google Analytics (or other analytics service). Note that you can track clicks only, not real shares.
-
-```javascript
-$(document).on('popup_opened.social-likes', function(event, service) {
-    ga('send', 'social', service, 'share', location.href);
-});
-```
-
 ## Troubleshooting
 
 ### The buttons don’t work, displayed without design or don’t displayed at all
@@ -290,13 +288,14 @@ So you need your page to look like this:
 	<meta charset="utf-8">
 	<title>Welcome to my site!</title>
 	<link href="social-likes_birman.css" rel="stylesheet">
+	...
 	<script src="social-likes.js"></script>
 	...
 ```
 
 ## Release History
 
-The changelog can be found in the [Changelog.md](Changelog.md) file.
+The changelog can be found on the [Releases page](https://github.com/sapegin/social-likes-next/releases).
 
 ## Contributing
 
