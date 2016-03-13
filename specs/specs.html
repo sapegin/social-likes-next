@@ -7,30 +7,6 @@
 	<link id="styles_birman" href="/social-likes_birman.css" rel="stylesheet" disabled>
 	<link id="styles_light" href="/social-likes_light.css" rel="stylesheet" disabled>
 
-<script>
-function $(selector) {
-	return document.querySelector(selector);
-}
-
-(function() {
-	function updateSkin() {
-		$('#styles_flat').disabled = true;
-		$('#styles_birman').disabled = true;
-		$('#styles_light').disabled = true;
-		$('#styles_' + location.hash.slice(1)).disabled = false;
-	}
-
-	if (location.hash) {
-		updateSkin();
-	}
-	else {
-		location.hash = '#flat';
-	}
-
-	window.onhashchange = updateSkin;
-}());
-</script>
-
 <style>
 body {
 	margin:0;
@@ -96,7 +72,7 @@ section {
 
 	<h3>Standard (dark background)</h3>
 	<div class="dark-bg">
-		<div class="social-likes" data-url="http://mail.ru/">
+		<div class="social-likes" data-url="http://mail.ru/" data-title="Custom Title">
 			<div data-service="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
 			<div data-service="twitter" data-via="sapegin" data-related="DessiTeckel:Моя такса" title="Опубликовать ссылку в Твиттере">Twitter</div>
 			<div data-service="vkontakte" title="Опубликовать ссылку во Вконтакте">Вконтакте</div>
@@ -105,17 +81,6 @@ section {
 			<div data-service="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Пинтересте">Pinterest</div>
 		</div>
 	</div>
-
-<!-- 	<h3>Standard (light)</h3>
-	<div class="social-likes social-likes_light" data-url="http://mail.ru/">
-		<div class="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
-		<div class="twitter" data-via="sapegin" data-related="DessiTeckel:Моя такса" title="Опубликовать ссылку в Твиттере">Twitter</div>
-		<div class="vkontakte" title="Опубликовать ссылку во Вконтакте">Вконтакте</div>
-		<div class="odnoklassniki" title="Опубликовать ссылку в Одноклассниках">Одноклассники</div>
-		<div class="plusone" title="Опубликовать ссылку в Гугл-плюсе">Google+</div>
-		<div class="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Пинтересте">Pinterest</div>
-	</div>
- -->
 
 <table>
 	<tr>
@@ -143,18 +108,7 @@ section {
 				</div>
 			</div>
 		</td>
-<!-- 		<td style="vertical-align:top; 	padding-left:40px">
-			<h3>Vertical (light)</h3>
-			<div class="social-likes social-likes_vertical social-likes_light" data-url="http://sapegin.github.io/social-likes/" data-title="Свой текст">
-				<div class="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
-				<div class="twitter" data-via="sapegin" data-related="DessiTeckel:Моя такса" data-url="http://github.com" data-title="Не #mail_ru" title="Опубликовать ссылку в Твиттере">Twitter</div>
-				<div class="vkontakte" title="Опубликовать ссылку во Вконтакте">Вконтакте</div>
-				<div class="odnoklassniki" title="Опубликовать ссылку в Одноклассниках">Одноклассники</div>
-				<div class="plusone" title="Плюсануть в Гугле">Google+</div>
-				<div class="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Pinterest">Pinterest</div>
-			</div>
-		</td>
- -->	</tr>
+	</tr>
 </table>
 
 	<h3>Icons only</h3>
@@ -167,16 +121,6 @@ section {
 		<div class="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Pinterest"></div>
 	</div>
 
-	<!-- <h3>Icons only (light)</h3>
-	<div class="social-likes social-likes_light" data-url="http://maps.mail.ru/">
-		<div class="facebook" title="Опубликовать ссылку на Фейсбуке"></div>
-		<div class="twitter" data-via="sapegin" data-related="DessiTeckel:Моя такса" data-url="http://github.com" data-title="Не #mail_ru" title="Опубликовать ссылку в Твиттере"></div>
-		<div class="vkontakte" title="Опубликовать ссылку во Вконтакте"></div>
-		<div class="odnoklassniki" title="Опубликовать ссылку в Одноклассниках"></div>
-		<div class="plusone" title="Плюсануть в Гугле"></div>
-		<div class="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Pinterest"></div>
-	</div> -->
-
 	<h3>Custom font-size</h3>
 	<div class="social-likes" data-url="http://mail.ru/" style="font-size:30px">
 		<div class="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
@@ -187,92 +131,66 @@ section {
 		<div class="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Пинтересте">Pinterest</div>
 	</div>
 
-<!-- 	<h3>Reinitialization</h3>
-	<div id="social-likes-re">
-		<div class="social-likes" data-url="http://mail.ru/">
-			<div class="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
-			<div class="twitter" data-via="sapegin" data-related="DessiTeckel:Моя такса" title="Опубликовать ссылку в Твиттере">Twitter</div>
-		</div>
-	</div>
-	<p><a href="#" id="social-likes-reinit">Reinit</a></p>
- --><script>
-/*var slre = $('#social-likes-re');
-var slre_html = slre.html();
-$('#social-likes-reinit').click(function() {
-	slre.html(slre_html);
-	slre.find('.social-likes').socialLikes();
-	return false;
-});*/
-</script>
-
-<!-- 	<h3>Manual initialization</h3>
-	<div id="social-likes-manual" data-url="http://mail.ru/">
-		<div class="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
-		<div class="twitter" data-via="sapegin" data-related="DessiTeckel:Моя такса" title="Опубликовать ссылку в Твиттере">Twitter</div>
-		<div class="pinterest" data-media="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/8/20/11/anigif_enhanced-buzz-31256-1377012172-9.gif" title="Опубликовать ссылку в Пинтересте">Pinterest</div>
-	</div>
-	<p><a href="#" id="social-likes-update">Change URL</a></p>
- --><script>
-/*var sl = $('#social-likes-manual');
-sl.on('popup_opened.social-likes', function(event, service, win) {
-	console.log('Popup opened', service, win);
-});
-sl.on('popup_closed.social-likes', function(event, service) {
-	console.log('Popup closed', service);
-});
-sl.socialLikes();
-$('#social-likes-update').click(function() {
-	sl.socialLikes({
-		url: 'https://github.com/sapegin/grunt-webfont/',
-		title: 'SVG to webfont converter for Grunt',
-		data: {
-			media: 'http://birdwatcher.ru/i/userpic.jpg'
-		}
-	});
-	return false;
-});
-*/
-</script>
-
-<!-- 	<h3>Manual initialization with JavaScript options</h3>
-	<div id="social-likes-manual-options">
-		<div class="facebook" title="Опубликовать ссылку на Фейсбуке">Facebook</div>
-	</div>
- -->	
-<script>
-/*$('#social-likes-manual-options').socialLikes({
-	url: 'https://github.com/sapegin/social-likes/',
-	title: 'Beautiful “like” buttons with counters for popular social networks'
-});*/
-</script>
-
-	<!-- <h3>User button &amp; custom count</h3>
+	<h3>User button</h3>
 <script>
 var socialLikesButtons = {
-	surfingbird: {
-		clickUrl: 'http://surfingbird.ru/share?url={url}',
-		//popupUrl: 'http://surfingbird.ru/share?url={url}',
-		pupupWidth: 650,
-		popupHeight: 500
+	github: {
+		icon: 'M8 .173C3.58.173 0 3.85 0 8.39c0 3.632 2.316 6.702 5.474 7.783.42.086.547-.173.547-.39V14.4c-2.23.476-2.694-1.124-2.694-1.124-.38-.908-.884-1.168-.884-1.168-.716-.52.042-.476.042-.476.8.044 1.22.865 1.22.865.717 1.254 1.896.908 2.317.692.085-.52.296-.91.506-1.125C4.758 11.85 2.863 11.157 2.863 8c0-.908.295-1.6.842-2.205-.084-.217-.337-1.038.084-2.163 0 0 .673-.216 2.19.865.63-.173 1.304-.302 2.02-.302.674 0 1.39.086 1.98.302 1.515-1.038 2.188-.865 2.188-.865.42 1.125.17 1.99.085 2.163.505.562.842 1.297.842 2.205 0 3.157-1.895 3.85-3.663 4.065.294.26.547.735.547 1.513v2.25c0 .215.167.475.546.388C13.684 15.092 16 12.022 16 8.39 16 3.85 12.42.172 8 .172z',
+		clickUrl: 'http://github.com/sapegin'
 	}
 };
 </script>
 <style>
-.social-likes__button_surfingbird {
-	background: #f2f3f5;
-	color: #596e7e;
-	border-color: #ced5e2;
-	}
-.social-likes__icon_surfingbird {
-	background: url(http://surfingbird.ru/img/share-icon.png) no-repeat 2px 3px;
-	}
+.skin_flat .social-likes__widget_github {
+	background: #333;
+}
+.skin_light .social-likes__widget_github {
+	color: #333;
+}
+.skin_birman .social-likes__icon_github {
+	color: #333;
+}
+.skin_birman .social-likes__widget_github:hover,
+.skin_birman .social-likes__widget_github:active,
+.skin_birman .social-likes__widget_github:focus {
+	background: #333;
+	border-color: #333;
+}
 </style>
-	<div class="social-likes">
-		<div class="surfingbird" data-counter="666">Surf</div>
-	</div>
 
-	</div>
--->
+<div class="social-likes">
+	<div data-service="github">GitHub</div>
+</div>
+
+</div>
+
+<script>
+	function $(selector) {
+		return document.querySelector(selector);
+	}
+	(function() {
+		function updateSkin() {
+			var skin = location.hash.slice(1);
+			$('#styles_flat').disabled = true;
+			$('#styles_birman').disabled = true;
+			$('#styles_light').disabled = true;
+			$('#styles_' + skin).disabled = false;
+			document.body.classList.remove('skin_flat');
+			document.body.classList.remove('skin_light');
+			document.body.classList.remove('skin_birman');
+			document.body.classList.add('skin_' + skin);
+		}
+
+		if (location.hash) {
+			updateSkin();
+		}
+		else {
+			location.hash = '#flat';
+		}
+
+		window.onhashchange = updateSkin;
+	}());
+</script>
 
 <script>
 (function() {
