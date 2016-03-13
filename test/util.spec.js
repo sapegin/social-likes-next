@@ -43,6 +43,11 @@ test('template should render a template', t => {
 	t.is(r, 'Foo foo baz 42.');
 });
 
+test('template should render empty string for unknown tags', t => {
+	let r = template('Foo {bar} baz {boo}.', { bar: 'foo' });
+	t.is(r, 'Foo foo baz .');
+});
+
 test('template should accept a converted function', t => {
 	let r = template('Foo {bar} baz {boo}.', { bar: 'foo', boo: 'baa' }, s => s.toUpperCase());
 	t.is(r, 'Foo FOO baz BAA.');
