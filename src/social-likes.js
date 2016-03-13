@@ -1,7 +1,7 @@
+import deepmerge from 'deepmerge';
 import Button from './button';
 import { dataset, toArray } from './util';
 import { prefix } from './config';
-import deepmerge from 'deepmerge';
 
 // Default options
 const defaults = {

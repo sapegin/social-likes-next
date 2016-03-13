@@ -1,5 +1,5 @@
-import { dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
 import deepmerge from 'deepmerge';
+import { dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
 import * as baseServices from './services';
 
 // Merge base services with user services
