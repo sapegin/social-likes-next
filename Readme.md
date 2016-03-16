@@ -1,7 +1,7 @@
 
 # Social Likes Next
 
-Beautiful share buttons for popular social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
+Beautiful share buttons for social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
 
 ![](http://wow.sapegin.me/101O2X050C32/social-likes-next.png)
 
@@ -78,9 +78,9 @@ Add this HTML where you want to have share buttons:
 	<div data-service="facebook" title="Share link on Facebook">Facebook</div>
 	<div data-service="twitter" title="Share link on Twitter">Twitter</div>
 	<div data-service="plusone" title="Share link on Google+">Google+</div>
-	<!-- <div data-service="pinterest" title="Share link on Pinterest" data-media="image link, required">Google+</div> -->
-	<!-- <div data-service="vkontakte" title="Share link on Vkontakte">Google+</div> -->
-	<!-- <div data-service="odnoklassniki" title="Share link on Odnoklassniki">Google+</div> -->
+	<!-- <div data-service="pinterest" title="Share link on Pinterest" data-media="image link, required">Pinterest</div> -->
+	<!-- <div data-service="vkontakte" title="Share link on Vkontakte">Vkontakte</div> -->
+	<!-- <div data-service="odnoklassniki" title="Share link on Odnoklassniki">Odnoklassniki</div> -->
 </div>
 ```
 
