@@ -1,0 +1,116 @@
+max_width = 1100px;
+base_color = #333;
+link_style = "gradient";
+link-color = #cf6c0a;
+visited-color = link-color;
+hover-color = #ff6900;
+
+@import '../node_modules/tamia/lib/styles/core';
+@import "../node_modules/tamia/lib/styles/bones";
+@import "../node_modules/tamia/lib/styles/classes/links";
+
+.skin_birman {
+	@import '../skins/social-likes_birman';
+}
+.skin_flat {
+	@import '../skins/social-likes_flat';
+}
+.skin_light {
+	@import '../skins/social-likes_light';
+}
+
+body {
+	max-width: max_width;
+	margin: 0 auto;
+	padding: spacer;
+	text-align: center;
+	background: #fff;
+	color: #111;
+	font-size: 18px;
+	line-height: 1.4;
+	font-family: "Helvetica Neue", Tahoma, sans-serif;
+}
+
+.alpha {
+	margin: 0 0 16px;
+	line-height: 1;
+	font-size: 64px;
+	font-weight: 200;
+	letter-spacing: -.2px;
+}
+
+.description {
+	space(6);
+}
+
+.examples {
+	space(6);
+
+	&_vertical {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+.skin {
+	space(2);
+
+	.social-likes {
+		justify-content: center;
+	}
+}
+
+.examples_vertical .skin {
+	display: flex;
+	justify-content: center;
+	width: 250px;
+}
+
+.download {
+	space(6);
+}
+
+.the-link {
+	font-size: 48px;
+	font-weight: 200;
+}
+
+.forkme {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 149px;
+	height: 149px;
+	z-index: 999;
+
+	&-i {
+		+link-all-states() {
+			color: #fff;
+		}
+
+		position: relative;
+		right: -37px;
+		top: -22px;
+		display: block;
+		width: 190px;
+		padding: 5px 15px;
+		text-align: center;
+		font-size: 14px;
+		background: #f9970d;
+		text-decoration: none;
+		text-shadow: 0 -1px 0 black(.15);
+		transform-origin: 0 0;
+		transform: rotate(45deg);
+	}
+}
+@media (max-width: 1150px) {
+	.forkme {
+		display: none;
+	}
+}
+
+.footer {
+	padding: spacer;
+	text-align: center;
+	font-size: 12px;
+}

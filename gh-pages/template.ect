@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="<%= @lang %>">
+<head>
+	<meta charset="utf-8">
+	<title><%= @pageTitle %></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="<%= content %>">
+	<link rel="image_src" href="<%= @image %>">
+	<meta property="og:image" content="<%= @image %>">
+	<link rel="stylesheet" href="<%- @fingerprint 'gh-pages.css' %>">
+</head>
+<body>
+	<div class="forkme">
+		<a href="https://github.com/sapegin/social-likes-next" class="forkme-i">Fork me on GitHub</a>
+	</div>
+
+	<h1 class="alpha"><%= @title %></h1>
+	<div class="description"><%- @content %></div>
+
+	<div class="examples">
+		<div class="skin skin_birman">
+			<div class="social-likes">
+				<% include 'buttons.ect' %>
+			</div>
+		</div>
+		<div class="skin skin_flat">
+			<div class="social-likes">
+				<% include 'buttons.ect' %>
+			</div>
+		</div>
+		<div class="skin skin_light">
+			<div class="social-likes">
+				<% include 'buttons.ect' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="examples examples_vertical">
+		<div class="skin skin_birman">
+			<div class="social-likes social-likes_vertical">
+				<% include 'buttons.ect' %>
+			</div>
+		</div>
+		<div class="skin skin_flat">
+			<div class="social-likes social-likes_vertical">
+				<% include 'buttons.ect' %>
+			</div>
+		</div>
+		<div class="skin skin_light">
+			<div class="social-likes social-likes_vertical">
+				<% include 'buttons.ect' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="examples examples_vertical">
+		<div class="skin skin_birman">
+			<div class="social-likes">
+				<% include 'buttons_notext.ect' %>
+			</div>
+		</div>
+		<div class="skin skin_flat">
+			<div class="social-likes">
+				<% include 'buttons_notext.ect' %>
+			</div>
+		</div>
+		<div class="skin skin_light">
+			<div class="social-likes">
+				<% include 'buttons_notext.ect' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="download">
+		<a href="https://github.com/sapegin/social-likes-next/blob/master/Readme.md" class="link the-link">Get The Buttons</a>
+	</div>
+
+	<div class="footer">
+		© <%= (new Date).getFullYear() %>
+		<a href="https://sapegin.me" class="link">Artem Sapegin</a> and contributors.
+		Flat skin: <a href="http://genn.org/" class="link">Genn Osypenko</a>, Birman skin: <a href="http://ilyabirman.net/" class="link">Ilya Birman</a>
+	</div>
+
+	<script src="<%- @fingerprint 'social-likes.min.js' %>"></script>
+</body>
+</html>
