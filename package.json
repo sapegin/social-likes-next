@@ -54,6 +54,7 @@
     "test:watch": "ava --watch",
     "start": "webpack-dev-server --port 8506 --host 0.0.0.0 --config build/webpack.config.development.js --content-base lib",
     "prepublish": "npm-run-all test clean run build",
+    "postpublish": "npm run gh-pages",
     "lint": "eslint src test",
     "build": "npm-run-all build:* skins skins:min",
     "build:lib": "babel src --out-dir lib",
