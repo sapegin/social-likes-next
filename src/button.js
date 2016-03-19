@@ -121,8 +121,8 @@ export default class Button {
 	/**
 	 * Replace URL and title in an URL template.
 	 *
-	 * @param {String} urlTemplate URL template.
-	 * @return {String}
+	 * @param {string} urlTemplate URL template.
+	 * @return {string}
 	 */
 	makeUrl(urlTemplate) {
 		return makeUrl(urlTemplate, {

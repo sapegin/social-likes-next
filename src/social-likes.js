@@ -30,6 +30,11 @@ export default class SocialLikes {
 		container.classList.add(`${prefix}_visible`);
 	}
 
+	/**
+	 * Update options.
+	 *
+	 * @param {Object} options New options.
+	 */
 	update(options) {
 		if (options.url === this.url) {
 			return;

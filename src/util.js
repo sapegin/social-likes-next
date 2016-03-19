@@ -97,10 +97,10 @@ export function makeUrl(url, context) {
 /**
  * Simple template.
  *
- * @param {String} tmpl Template.
+ * @param {string} tmpl Template.
  * @param {Object} context Replacements object.
  * @param {Function} [filter] Value filter function.
- * @return {String}
+ * @return {string}
  */
 export function template(tmpl, context, filter) {
 	return tmpl.replace(/\{([^}]+)}/g, function(m, key) {
@@ -113,9 +113,9 @@ export function template(tmpl, context, filter) {
  * Generates BEM class names for a block or element.
  * Block name is fixed to the ${prefix} value.
  *
- * @param {String} [elem] Element name.
- * @param {String} [mod] Modifier.
- * @return {String}
+ * @param {string} [elem] Element name.
+ * @param {string} [mod] Modifier.
+ * @return {string}
  */
 export function className(elem, mod) {
 	let base = prefix + (elem ? `__${elem}` : '');
@@ -127,7 +127,7 @@ export function className(elem, mod) {
 /**
  * Convert array like object to array.
  *
- * @param {object} list Array like object.
+ * @param {Object} list Array like object.
  * @returns {Array}
  */
 export function toArray(list) {
