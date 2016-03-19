@@ -1,4 +1,5 @@
 import deepmerge from 'deepmerge';
+import { prefix } from './config';
 import { dataset, makeUrl, className, addParamsToUrl, openPopup, toArray, svg } from './util';
 import * as baseServices from './services';
 
@@ -153,7 +154,7 @@ export default class Button {
 			openPopup(url, {
 				width: options.popupWidth,
 				height: options.popupHeight,
-				name: `sl_${this.service}`,
+				name: `${prefix}_${this.service}`,
 			});
 		}
 	}
