@@ -35,8 +35,10 @@
     "eslint": "~1.10.3",
     "eslint-config-tamia": "~1.2.0",
     "fledermaus": "~4.1.2",
+    "gh-pages": "~0.11.0",
     "html-webpack-plugin": "~2.10.0",
     "mkdirp": "~0.5.1",
+    "npm-run-all": "~1.5.3",
     "postcss-cli": "~2.5.1",
     "postcss-initial": "~1.5.0",
     "rimraf": "~2.5.2",
@@ -61,9 +63,11 @@
     "skins": "mkdirp lib && stylus skins --out lib && postcss --use autoprefixer --use postcss-initial -d lib lib/*.css",
     "skins:min": "mkdirp dist && stylus skins --out dist && postcss --use autoprefixer --use postcss-initial --use cssnano --replace dist/*.css",
     "skins:watch": "stylus skins --out lib --watch",
+    "gh-pages": "npm-run-all gh-pages:*",
     "gh-pages:copy": "cpy 'dist/*.min.js' gh-pages/public",
     "gh-pages:styles": "stylus gh-pages --out gh-pages/public && postcss --use autoprefixer --use postcss-initial --use cssnano --use $(pwd)/gh-pages/fixstyles.js --replace gh-pages/public/*.css",
-    "gh-pages:build": "babel-node gh-pages"
+    "gh-pages:build": "babel-node gh-pages",
+    "gh-pages:publish": "gh-pages -d gh-pages/public"
   },
   "ava": {
     "files": [
