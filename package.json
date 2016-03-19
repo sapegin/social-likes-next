@@ -49,13 +49,13 @@
     "webpack-merge": "~0.8.3"
   },
   "scripts": {
-    "test": "npm run lint && npm run test:ava",
+    "test": "npm-run-all -p lint test:ava",
     "test:ava": "ava",
     "test:watch": "ava --watch",
     "start": "webpack-dev-server --port 8506 --host 0.0.0.0 --config build/webpack.config.development.js --content-base lib",
-    "prepublish": "npm run test && npm run clean && npm run build",
+    "prepublish": "npm-run-all test clean run build",
     "lint": "eslint src test",
-    "build": "npm run build:lib && npm run build:umd && npm run build:umd:min && npm run skins && npm run skins:min",
+    "build": "npm-run-all build:* skins skins:min",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack --config build/webpack.config.umd.js",
     "build:umd:min": "webpack --config build/webpack.config.umd-min.js",
