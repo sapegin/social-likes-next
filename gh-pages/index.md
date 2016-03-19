@@ -1,7 +1,7 @@
 ---
 layout: template
 lang: en
-pageTitle: "Social Likes Next: Beautiful modern social share buttons"
+pageTitle: "Social Likes Next: modern social share buttons"
 title: "Social Likes Next"
 image: "http://sapegin.github.com/social-likes-next/social-likes.png"
 ---
