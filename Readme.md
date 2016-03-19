@@ -266,6 +266,8 @@ You can add additional Twitter data using [Twitter Card](https://dev.twitter.com
 <meta name="twitter:creator" content="@sapegin">
 ```
 
+See also [Facebook’s sharing tips](https://developers.facebook.com/docs/sharing/best-practices).
+
 If you’re experiencing any problems with meta data try [Open Graph Debugger](https://developers.facebook.com/tools/debug/) and [Twitter Card Validator](https://dev.twitter.com/docs/cards/validation/validator).
 
 ## Troubleshooting
