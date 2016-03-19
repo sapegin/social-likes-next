@@ -179,7 +179,7 @@ You can also specify options:
 ```javascript
 import socialLikes from 'social-likes-next';
 socialLikes(document.getElementById('share'), {
-	url: 'http://landscapists.info/,
+	url: 'http://landscapists.info/',
 	title: 'Landscapists of Russia',
 });
 ```
