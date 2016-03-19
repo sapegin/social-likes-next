@@ -1,9 +1,10 @@
-
 # Social Likes Next
 
 Beautiful share buttons for social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
 
-![](http://wow.sapegin.me/101O2X050C32/social-likes-next.png)
+[![](http://wow.sapegin.me/101O2X050C32/social-likes-next.png)](https://sapegin.github.io/social-likes-next/)
+
+[See demo](https://sapegin.github.io/social-likes-next/)
 
 ## Features
 
