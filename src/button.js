@@ -116,6 +116,9 @@ export default class Button {
 	initEvents() {
 		if (!this.options.clickUrl) {
 			this.widget.addEventListener('click', this.onClick.bind(this));
+			this.widget.addEventListener('keydown', this.onKeyDown.bind(this));
+			this.widget.setAttribute('tabindex', '0');
+			this.widget.setAttribute('role', 'button');
 		}
 	}
 
@@ -156,6 +159,13 @@ export default class Button {
 				height: options.popupHeight,
 				name: `${prefix}_${this.service}`,
 			});
+		}
+	}
+
+	onKeyDown(event) {
+		if (event.which === 13 || event.which === 32) {
+			event.preventDefault();
+			this.onClick(event);
 		}
 	}
 }
