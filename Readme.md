@@ -249,7 +249,15 @@ This plugin allows your users to “share” the content of your website. (Un)fo
 
 ¹ I believe that “shares” are much better and valuable than “likes” because they’re more visible in feed and users could add they’re own comments to links they share. “Like” costs nothing.
 
-### How to change title, description and image
+### Why there’s no counters?
+
+Twitter counter API [was disabled by Twitter](https://blog.twitter.com/2015/hard-decisions-for-a-sustainable-platform) in November 2015, they’ve also removed the counter from their native share button.
+
+I believe that all other major social networks will follow Twitter and remove counters from their share buttons in the future.
+
+Counters (as well as native share buttons) make your site slower because every counter adds an extra HTTP request to a new host. Social Likes Next doesn’t add any additional HTTP requests if you bundle its scripts and styles with your site’s JavaScript and CSS.
+
+### How to change title, description and image?
 
 You can use [Open Graph](http://ogp.me/). It works for [Facebook](http://davidwalsh.name/facebook-meta-tags), Twitter, [Google+](https://developers.google.com/+/web/snippet/), [Pinterest](http://developers.pinterest.com/rich_pins/) and [Vkontakte](http://vk.com/dev/widget_like)). 
 
