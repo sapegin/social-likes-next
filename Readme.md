@@ -48,7 +48,7 @@ require('social-likes-next/lib/social-likes_flat.css');  // Flat skin
 
 ### Installation from CDN
 
-You can also use [npmcdn](https://npmcdn.com/):
+You can also [use npmcdn](https://npmcdn.com/social-likes-next/):
 
 1. Add a script to your the bottom of your HTML’s `<body>`:
 
