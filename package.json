@@ -20,6 +20,9 @@
     "url": "https://github.com/sapegin/social-likes-next/issues"
   },
   "license": "MIT",
+  "dependencies": {
+    "deepmerge": "~0.2.10"
+  },
   "devDependencies": {
     "autoprefixer": "~6.3.3",
     "ava": "~0.13.0",
@@ -82,8 +85,5 @@
       "./test/avasetup"
     ],
     "babel": "inherit"
-  },
-  "dependencies": {
-    "deepmerge": "~0.2.10"
   }
 }
