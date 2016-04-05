@@ -59,7 +59,7 @@
     "prepublish": "npm-run-all test clean build",
     "postpublish": "npm run gh-pages",
     "lint": "eslint src test",
-    "build": "npm-run-all build:* skins skins:min",
+    "build": "npm-run-all build:* build:*:* skins skins:min",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack --config build/webpack.config.umd.js",
     "build:umd:min": "webpack --config build/webpack.config.umd-min.js",
