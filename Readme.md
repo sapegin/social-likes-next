@@ -257,7 +257,7 @@ Counters (as well as native share buttons) make your site slower because every c
 
 ### How to change title, description and image?
 
-You can use [Open Graph](http://ogp.me/). It works for [Facebook](http://davidwalsh.name/facebook-meta-tags), Twitter, [Google+](https://developers.google.com/+/web/snippet/), [Pinterest](http://developers.pinterest.com/rich_pins/) and [Vkontakte](http://vk.com/dev/widget_like)). 
+You can use [Open Graph](http://ogp.me/). It works for [Facebook](http://davidwalsh.name/facebook-meta-tags), Twitter, [Google+](https://developers.google.com/+/web/snippet/), [Pinterest](http://developers.pinterest.com/rich_pins/) and [Vkontakte](http://vk.com/dev/widget_like)).
 
 You can add additional Twitter data using [Twitter Card](https://dev.twitter.com/docs/cards). You have to [approve](https://dev.twitter.com/docs/cards/validation/validator) every type of Twitter Card.
 
