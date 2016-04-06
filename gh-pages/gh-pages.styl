@@ -36,9 +36,16 @@ body {
 .alpha {
 	margin: 0 0 16px;
 	line-height: 1;
-	font-size: 64px;
+	font-size: 8vw;
 	font-weight: 200;
 	letter-spacing: -.2px;
+	
+	+below(500px) {
+		font-size: 40px;
+	}
+	+above(880px) {
+		font-size: 68px;
+	}
 }
 
 .description {
@@ -52,10 +59,17 @@ body {
 		display: flex;
 		justify-content: space-around;
 	}
+
+	+below(800px) {
+		&_vertical {
+			display: block;
+		}
+	}
 }
 
 .skin {
 	margin-bottom: 3vh;
+	margin-side: auto;
 
 	.social-likes {
 		justify-content: center;
@@ -104,9 +118,8 @@ body {
 		transform-origin: 0 0;
 		transform: rotate(45deg);
 	}
-}
-@media (max-width: 1150px) {
-	.forkme {
+
+	+below(880px) {
 		display: none;
 	}
 }
