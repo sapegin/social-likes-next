@@ -1,5 +1,8 @@
 # Social Likes Next
 
+[![Build Status](https://travis-ci.org/sapegin/social-likes-next.svg)](https://travis-ci.org/sapegin/social-likes-next)
+[![npm](https://img.shields.io/npm/v/social-likes-next.svg)](https://www.npmjs.com/package/social-likes-next)
+
 Beautiful share buttons for social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
 
 [![](http://wow.sapegin.me/342N29131F1r/social-likes-next.png)<br>**See the demo!**](http://social-likes-next.js.org/)
