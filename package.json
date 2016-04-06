@@ -1,6 +1,6 @@
 {
   "name": "social-likes-next",
-  "version": "1.0.0-rc",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "files": [
     "lib",
