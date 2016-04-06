@@ -2,7 +2,7 @@
 
 Beautiful share buttons for social networks: Facebook, Twitter, Google+, Pinterest, Vkontakte and Odnoklassniki.
 
-[![](http://wow.sapegin.me/342N29131F1r/social-likes-next.png)<br>See the demo!](http://social-likes-next.js.org/)
+[![](http://wow.sapegin.me/342N29131F1r/social-likes-next.png)<br>**See the demo!**](http://social-likes-next.js.org/)
 
 ## Features
 
