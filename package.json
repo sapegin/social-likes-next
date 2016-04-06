@@ -20,6 +20,9 @@
     "url": "https://github.com/sapegin/social-likes-next/issues"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=0.12.0"
+  },
   "dependencies": {
     "deepmerge": "~0.2.10"
   },
