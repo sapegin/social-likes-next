@@ -258,6 +258,10 @@ I believe that all other major social networks will follow Twitter and remove co
 
 Counters (as well as native share buttons) make your site slower because every counter adds an extra HTTP request to a new host. Social Likes Next doesn’t add any additional HTTP requests if you bundle its scripts and styles with your site’s JavaScript and CSS.
 
+### Why only IE11+ is supported?
+
+Microsoft don’t support older versions of Internet Explorer [since January 2016](https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support) so it’s a great opportunity for us, developers, to do the same.
+
 ### How to change title, description and image?
 
 You can use [Open Graph](http://ogp.me/). It works for [Facebook](http://davidwalsh.name/facebook-meta-tags), Twitter, [Google+](https://developers.google.com/+/web/snippet/), [Pinterest](http://developers.pinterest.com/rich_pins/) and [Vkontakte](http://vk.com/dev/widget_like)).
