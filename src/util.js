@@ -131,7 +131,7 @@ export function className(elem, mod) {
  * @returns {Array}
  */
 export function toArray(list) {
-	return Array.from(list);
+	return Array.prototype.slice.call(list);
 }
 
 /**
