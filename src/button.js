@@ -43,7 +43,7 @@ export default class Button {
 	}
 
 	/**
-	 * Read service name and apply it’s options.
+	 * Read service name and apply its options.
 	 * Service can be a class on the widget (.facebook) or `service` option.
 	 */
 	initService() {

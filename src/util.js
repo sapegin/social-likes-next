@@ -1,4 +1,4 @@
-import { prefix } from './config';
+import { prefix, elemDelimiter, modDelimiter } from './config';
 
 /**
  * Return node.dataset as an object
@@ -110,7 +110,7 @@ export function template(tmpl, context, filter) {
 }
 
 /**
- * Generates BEM class names for a block or element.
+ * Generate BEM class names for a block or element.
  * Block name is fixed to the ${prefix} value.
  *
  * @param {string} [elem] Element name.
@@ -118,9 +118,9 @@ export function template(tmpl, context, filter) {
  * @return {string}
  */
 export function className(elem, mod) {
-	let base = prefix + (elem ? `__${elem}` : '');
+	let base = prefix + (elem ? `${elemDelimiter}${elem}` : '');
 	return base +
-		(mod ? ` ${base}_${mod}` : '')
+		(mod ? ` ${base}${modDelimiter}${mod}` : '')
 	;
 }
 
@@ -135,7 +135,7 @@ export function toArray(list) {
 }
 
 /**
- * Returns SVG code of an icon.
+ * Return SVG code of an icon.
  *
  * @param {string|string[]} paths SVG path of an icon.
  * @param {string} cls CSS class name.
