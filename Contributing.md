@@ -59,6 +59,13 @@ function foo(bar, fum) {
 - Install [EditorConfig](http://editorconfig.org/) plugin for your code editor.
 - Feel free to [ask me](http://sapegin.me/contacts) anything you need.
 
+## Adding new buttons
+
+1. Add and SVG icon to `skins/icons`. Icon should be 16×16 pixels and only contain a single `<path>`.
+2. Add a button config file to `src/services`.
+3. Copy SVG path from the SVG icon to the JS config file by running `node build/svgpath.js buttonname` or manually.
+4. Add a brand color to `skins/include/colors.styl`.
+4. Add styles to all `skins/social-likes_*.styl` files.
 
 ## Building and running tests
 
@@ -71,9 +78,10 @@ npm install
 Hack on:
 
 ```bash
-npm start
-npm skins:watch
+npm start && npm run skins:watch
 ```
+
+Then open [http://0.0.0.0:8506/](http://0.0.0.0:8506/#flat) in your browser.
 
 Run tests:
 
