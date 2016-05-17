@@ -7,7 +7,7 @@ export default {
 	popupHeight: 450,
 	click() {
 		// Add a colon to improve readability
-		if (!/[\.\?:\-–—]\s*$/.test(this.options.title)) {
+		if (!/[.?!:\-–—]\s*$/.test(this.options.title)) {
 			this.options.title += ':';
 		}
 		return true;
