@@ -26,9 +26,9 @@ export default class Button {
 			this.initHtml();
 			this.initEvents();
 		}
-		else if (process.env.NODE_ENV === 'development') {
+		if (!this.service && process.env.NODE_ENV === 'development') {
 			/* eslint-disable no-console */
-			console.error(`Social Likes: service for widget "${widget.className}" not found.`);
+			console.error(`Social Likes: service for widget "${widget.className || this.options.service}" not found.`);
 			/* eslint-enable no-console */
 		}
 	}
@@ -60,7 +60,12 @@ export default class Button {
 			}
 		}
 		this.service = service;
-		this.options = deepmerge(this.options, services[service]);
+		if (services[service]) {
+			this.options = deepmerge(this.options, services[service]);
+		}
+		else {
+			this.service = null;
+		}
 	}
 
 	/**
