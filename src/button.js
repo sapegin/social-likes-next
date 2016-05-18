@@ -159,11 +159,19 @@ export default class Button {
 		}
 		if (ok) {
 			let url = this.makeUrlWithParams(options.popupUrl);
-			openPopup(url, {
+			let event = new CustomEvent('popup_closed.social-likes', { bubbles: true, detail: { options: this.options } });
+			let popup = openPopup(url, {
 				width: options.popupWidth,
 				height: options.popupHeight,
 				name: `${prefix}_${this.service}`,
 			});
+			let timer = setInterval(() => {
+				if (popup.closed) {
+					document.dispatchEvent(event);
+					clearInterval(timer);
+				}
+				return;
+			}, 300);
 		}
 	}
 
