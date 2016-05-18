@@ -158,7 +158,11 @@ export default class Button {
 			ok = options.click.call(this, event);
 		}
 		if (ok) {
+			if (this.widget.getAttribute('data-url') !== this.options.url) {
+				this.options.url = this.widget.getAttribute('data-url');
+			}
 			let url = this.makeUrlWithParams(options.popupUrl);
+
 			let event = new CustomEvent('popup_closed.social-likes', { bubbles: true, detail: { options: this.options } });
 			let popup = openPopup(url, {
 				width: options.popupWidth,
