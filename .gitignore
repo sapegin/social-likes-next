@@ -2,5 +2,3 @@ node_modules
 dist
 lib
 Changelog.md
-gh-pages/public
-!gh-pages/public/social-likes-next.png

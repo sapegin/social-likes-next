@@ -15,6 +15,6 @@ let renderTemplate = createTemplateRenderer({ root: '.' });
 
 let documents = loadSourceFiles('.', ['md']);
 
-let pages = generatePages(documents, { assetsFolder: 'public' }, helpers, { ect: renderTemplate });
+let pages = generatePages(documents, { assetsFolder: '../docs' }, helpers, { ect: renderTemplate });
 
-savePages(pages, 'public');
+savePages(pages, '../docs');
