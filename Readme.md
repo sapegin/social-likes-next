@@ -49,12 +49,12 @@ require('social-likes-next/lib/social-likes_flat.css');  // Flat skin
 
 ### Installation from CDN
 
-You can also [use npmcdn](https://npmcdn.com/social-likes-next/):
+You can also [use unpkg](https://unpkg.com/social-likes-next/):
 
 1. Add a script to your the bottom of your HTML’s `<body>`:
 
 ```html
-<script src="https://npmcdn.com/social-likes-next/dist/social-likes.min.js"></script>
+<script src="https://unpkg.com/social-likes-next/dist/social-likes.min.js"></script>
 ```
 
 2. Add a stylesheet.
@@ -68,7 +68,7 @@ Choose one of the CSS files:
 And add it to your HTML’s `<head>`:
 
 ```html
-<link rel="stylesheet" href="https://npmcdn.com/social-likes-next/dist/social-likes_flat.css">
+<link rel="stylesheet" href="https://unpkg.com/social-likes-next/dist/social-likes_flat.css">
 ```
 
 ### Adding button to your page
